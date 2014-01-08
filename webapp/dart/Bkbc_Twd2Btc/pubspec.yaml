@@ -1,0 +1,8 @@
+name: Bkbc_Twd2Btc
+description: A sample Polymer application
+dependencies:
+  intl: any
+  polymer: any
+transformers:
+- polymer:
+    entry_points: web/bkbc_twd2btc.html

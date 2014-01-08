@@ -1,0 +1,93 @@
+<project name="BKBC_TWD2BTC_DART" default="init" basedir=".">
+	<property name="export-dir" location="export" />
+	<property name="dart-build-dir" location="dart/Bkbc_Twd2Btc/build" />
+	<property name="ver.main" value="3.0" />
+	<tstamp>
+		<format property="NOW_BUILD" pattern="yyyy_MM_dd-hhmmss"
+			locale="en,US" />
+		<format property="DAYLABEL" pattern="yyyyMMdd" locale="en,US" />
+	</tstamp>
+	<target name="init">
+		<echo>export to ${export-dir}</echo>
+	</target>
+	<target name="move">
+		<delete dir="${export-dir}" />
+		<mkdir dir="${export-dir}" />
+
+		<copy todir="${export-dir}">
+			<fileset dir="${dart-build-dir}" />
+		</copy>
+		<move tofile="${export-dir}/index.html" file="${export-dir}/bkbc_twd2btc.html"></move>
+		<replace file="${export-dir}/index.html" token="packages/shadow_dom/shadow_dom.debug.js"
+			value="shadow_dom.min.js" />
+		<replace file="${export-dir}/index.html" token="packages/custom_element/custom-elements.debug.js"
+			value="custom-elements.min.js" />
+		<replace file="${export-dir}/index.html" token="packages/browser/interop.js"
+			value="interop.js" />
+		<replace file="${export-dir}/index.html" token="BUILD_VERSION"
+			value="v-${NOW_BUILD}" />
+		<copy tofile="${export-dir}/shadow_dom.min.js" file="${export-dir}/packages/shadow_dom/shadow_dom.min.js"></copy>
+		<copy tofile="${export-dir}/custom-elements.min.js" file="${export-dir}/packages/custom_element/custom-elements.min.js"></copy>
+		<copy tofile="${export-dir}/interop.js" file="${export-dir}/packages/browser/interop.js"></copy>
+		<delete dir="${export-dir}/packages"/>
+		<delete dir="${export-dir}/testdata"/>
+	</target>
+	<target name="1-linux64-post-work">
+		<delete dir="${export64-www-root}" />
+		<delete dir="${export64-www-admin}" />
+		<delete dir="${export64-www-mjpg}" />
+
+		<mkdir dir="${export64-www-root}" />
+		<mkdir dir="${export64-www-admin}" />
+		<mkdir dir="${export64-www-mjpg}" />
+
+		<copy todir="${export64-www-root}">
+			<fileset dir="${build-www-root}" />
+		</copy>
+
+		<copy todir="${export64-www-mjpg}">
+			<fileset dir="${build-www-root}" />
+		</copy>
+
+		<copy todir="${export64-www-admin}">
+			<fileset dir="${build-www-admin}" />
+		</copy>
+
+
+		<mkdir dir="${dist-export-linux64}/workspace/logs" />
+		<mkdir dir="${dist-export-linux64}/doc" />
+		<copy todir="${dist-export-linux64}/doc">
+			<fileset dir="${build-root-doc}" />
+		</copy>
+		<replace file="${dist-export-linux64}/alphacast.ini" token="DABS.VER=0.0.0.0"
+			value="DABS.VER=${ver.abs}" />
+		<copy file="${build-root-sh}/abs3d" todir="${dist-export-linux64}"
+			overwrite="true" />
+		<copy file="${build-root-sh}/abs3d.cron" todir="${dist-export-linux64}"
+			overwrite="true" />
+		<copy file="${build-root-sh}/abs3install" todir="${dist-export-linux64}"
+			overwrite="true" />
+	</target>
+	<target name="x-2.linux32-tgz">
+		<echo message="Build tgz for rpm" />
+		<delete file="${dist-tgz-linux32}" />
+		<tar tarfile="jade.tar" longfile="gnu">
+			<!-- NOTE : prefix jade don't modify, or change abs2.spec first -->
+			<tarfileset dir="${dist-export-linux32}" prefix="jade"
+				preserveLeadingSlashes="true" />
+		</tar>
+		<gzip zipfile="${dist-tgz-linux32}" src="jade.tar" />
+		<delete file="jade.tar" />
+	</target>
+	<target name="2.linux64-tgz">
+		<echo message="Build tgz for rpm" />
+		<delete file="${dist-tgz-linux64}" />
+		<tar tarfile="jade.tar" longfile="gnu">
+			<!-- NOTE : prefix jade don't modify, or change abs2.spec first -->
+			<tarfileset dir="${dist-export-linux64}" prefix="jade"
+				preserveLeadingSlashes="true" />
+		</tar>
+		<gzip zipfile="${dist-tgz-linux64}" src="jade.tar" />
+		<delete file="jade.tar" />
+	</target>
+</project>
