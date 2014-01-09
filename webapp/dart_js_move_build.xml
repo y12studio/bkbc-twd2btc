@@ -3,7 +3,7 @@
 	<property name="dart-build-dir" location="dart/Bkbc_Twd2Btc/build" />
 	<property name="ver.main" value="3.0" />
 	<tstamp>
-		<format property="NOW_BUILD" pattern="yyyy_MM_dd-hhmmss"
+		<format property="NOW_BUILD" pattern="yyyy_MM_dd-HHmmss"
 			locale="en,US" />
 		<format property="DAYLABEL" pattern="yyyyMMdd" locale="en,US" />
 	</tstamp>

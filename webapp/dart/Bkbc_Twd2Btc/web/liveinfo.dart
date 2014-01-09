@@ -68,8 +68,8 @@ class LiveInfo extends PolymerElement {
     router.root
       ..addRoute(name: 'btc', path: '/btc/:amount/:btcaddrId/:btcRisk', enter: showBtc)
       ..addRoute(name: 'twd', path: '/twd/:amount/:btcaddrId/:btcRisk', enter: showTwd)
-        ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
-    router.listen();
+      ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
+    router.listen(ignoreClick: true);
   }
   
   bool get applyAuthorStyles => true;
