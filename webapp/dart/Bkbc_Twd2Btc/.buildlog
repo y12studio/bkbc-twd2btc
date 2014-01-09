@@ -3613,3 +3613,291 @@ build.dart --machine --changed=pubspec.yaml
 [{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
 build.dart finished [830 ms]
 
+---
+build.dart --machine --changed=web\bkbc_twd2btc.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [820 ms]
+
+---
+build.dart --machine --changed=web\bkbc_twd2btc.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [807 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [806 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [807 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [806 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [801 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [818 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [810 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [803 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [806 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [813 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [814 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.dart
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [830 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [807 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [807 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [808 ms]
+
+---
+build.dart --machine --removed=build\bitqr_y12.png --removed=build\bkbc_twd2btc.css --removed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":36,"charStart":1367,"charEnd":1435}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [817 ms]
+
+---
+build.dart --machine --changed=web\bkbc_twd2btc.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":61,"charStart":2126,"charEnd":2194}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [912 ms]
+
+---
+build.dart --machine --changed=build\bitqr_y12.png --changed=build\bkbc_twd2btc.css --changed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":61,"charStart":2126,"charEnd":2194}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [881 ms]
+
+---
+build.dart --machine --changed=web\bkbc_twd2btc.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [826 ms]
+
+---
+build.dart --machine --removed=build\bitqr_y12.png --removed=build\bkbc_twd2btc.css --removed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [833 ms]
+
+---
+build.dart --machine --changed=build\bitqr_y12.png --changed=build\bkbc_twd2btc.css --changed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":21,"charStart":1045,"charEnd":1106}}]
+build.dart finished [834 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1013,"charEnd":1074}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1013,"charEnd":1074}}]
+build.dart finished [812 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+build.dart finished [808 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+build.dart finished [814 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1029,"charEnd":1090}}]
+build.dart finished [815 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1028,"charEnd":1089}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1028,"charEnd":1089}}]
+build.dart finished [813 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [842 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [844 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1034,"charEnd":1095}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1034,"charEnd":1095}}]
+build.dart finished [809 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [816 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [811 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [832 ms]
+
+---
+build.dart --machine --changed=web\liveinfo.html
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [840 ms]
+
+---
+build.dart --machine --removed=build\bitqr_y12.png --removed=build\bkbc_twd2btc.css --removed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [826 ms]
+
+---
+build.dart --machine --changed=build\bitqr_y12.png --changed=build\bkbc_twd2btc.css --changed=build\bkbc_twd2bt...
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":31,"charStart":1139,"charEnd":1192}}]
+[{"method":"warning","params":{"file":"web/bkbc_twd2btc.html","message":"Named entity expected. Got none.","line":62,"charStart":2137,"charEnd":2205}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+[{"method":"warning","params":{"file":"web/liveinfo.html","message":"Named entity expected. Got none.","line":20,"charStart":1030,"charEnd":1091}}]
+build.dart finished [806 ms]
+

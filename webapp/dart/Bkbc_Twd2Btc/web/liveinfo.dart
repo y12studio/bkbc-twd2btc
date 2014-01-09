@@ -18,7 +18,7 @@ class LiveInfo extends PolymerElement {
   @observable String twdPerTx = "0.0";
   @observable String inbtc = "0.0";
   @observable String intwd = "0.0";
-  @observable String inrisk = "10";
+  @observable String inrisk = "0";
   @observable String calcTwd = "000000.0";
   @observable String calcTwdRaw = "000000.0";
   @observable String calcBtc = "0.00000";
@@ -64,7 +64,7 @@ class LiveInfo extends PolymerElement {
     calcBtc="0.0";
     calcBtcRaw="0.0";
     amountTwd = (vtwd*rate).toStringAsFixed(1);
-    amountBtc = vbtc.toStringAsFixed(8);
+    amountBtc = vbtc.toString();
     intwd = "0.0";
   }
   
@@ -80,7 +80,7 @@ class LiveInfo extends PolymerElement {
     calcTwd="0.0";
     calcTwdRaw="0.0";
     amountTwd = vtwd.toStringAsFixed(1);
-    amountBtc = (vbtc*rate).toStringAsFixed(8);
+    amountBtc = (vbtc*rate).toString();
     inbtc = "0.0";
   }
   

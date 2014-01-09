@@ -2,19 +2,18 @@
 <polymer-element name="live-info">
   <template>
     <style>
-      #divBox {
-        text-align: center;
-        margin-top: 20px;
+       .big {
+        font-size:1.1em;
       }
     </style>
     <div class="panel panel-default">
       <div class="panel-heading">匯率資訊 <span class="pull-right">更新時間:{{updateTime}}</span></div>
       <div class="panel-body">
       <ul class="list-group">
-         <li class="list-group-item"><h3>TWD/BTC<span class="label label-primary pull-right">{{twdPerBtc}}</span></h3></li>
-         <li class="list-group-item"><h3>TWD/TxFee<span class="label label-danger pull-right">{{twdPerTx}}</span></h3></li>
-         <li class="list-group-item"><h3>USD/BTC<span class="label label-info pull-right">{{usdPerBtc}}</span></h3></li>
-         <li class="list-group-item"><h3>TWD/USD<span class="label label-warning pull-right">{{twdPerUsd}}</span></h3></li>
+         <li class="list-group-item"><h3>BTC/TWD<span class="label label-primary pull-right big">{{twdPerBtc}}</span></h3></li>
+         <li class="list-group-item"><h3>TxFee/TWD<span class="label label-danger pull-right big">{{twdPerTx}}</span></h3></li>
+         <li class="list-group-item"><h3>BTC/USD<span class="label label-info pull-right big">{{usdPerBtc}}</span></h3></li>
+         <li class="list-group-item"><h3>USD/TWD<span class="label label-warning pull-right big">{{twdPerUsd}}</span></h3></li>
       </ul>
       <p>TWD新台幣/BTC比特幣/USD美元/TxFee最低交易手續費</p>
       <p>BTC比特幣匯率走勢可參考：<a href="http://markets.blockchain.info/" target="_blank">markets.blockchain.info</a></p>
@@ -27,12 +26,12 @@
       <ul class="list-group">
           <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleRiskChange}}" value="{{inrisk}}" />%匯率波動及風險調整百分比</li>
          <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleBtcChange}}" value="{{inbtc}}" />BTC~=<span
-           class="label label-danger">{{calcTwd}}</span> TWD <span class="label label-default pull-right">{{calcTwdRaw}}</span>
+           class="label label-danger big">{{calcTwd}}</span> TWD <span class="label label-default pull-right">{{calcTwdRaw}}</span>
            </li>
            <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleTwdChange}}" value="{{intwd}}" />TWD~=<span
-          class="label label-info">{{calcBtc}}</span> BTC <span class="label label-default pull-right">{{calcBtcRaw}}</span></li>
+          class="label label-info big">{{calcBtc}}</span> BTC <span class="label label-default pull-right">{{calcBtcRaw}}</span></li>
       </ul>
-       <p>灰色代表沒有調整的數值，風險百分比預設對低波動低風險新台幣有利，相反可調整為負數。</p>
+       <p>灰色代表沒有調整的數值，正風險百分比預設新台幣有利（相對低波動風險），相反可調整為負數改為對比特敝有利。</p>
       </div>
     </div>
     <div class="panel panel-default">
