@@ -1,3 +1,18 @@
+<!--
+ * Copyright 2013 Y12STUDIO
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+-->
 <!DOCTYPE html>
 <polymer-element name="live-info">
   <template>
@@ -25,11 +40,11 @@
       <div class="panel-body">
       <ul class="list-group">
           <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleRiskChange}}" value="{{inrisk}}" />%匯率波動及風險調整百分比</li>
+           <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleTwdChange}}" value="{{intwd}}" />TWD~=<span
+          class="label label-info big">{{calcBtc}}</span> BTC <span class="label label-default pull-right">{{calcBtcRaw}}</span></li>
          <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleBtcChange}}" value="{{inbtc}}" />BTC~=<span
            class="label label-danger big">{{calcTwd}}</span> TWD <span class="label label-default pull-right">{{calcTwdRaw}}</span>
            </li>
-           <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleTwdChange}}" value="{{intwd}}" />TWD~=<span
-          class="label label-info big">{{calcBtc}}</span> BTC <span class="label label-default pull-right">{{calcBtcRaw}}</span></li>
       </ul>
        <p>灰色代表沒有調整的數值，正風險百分比預設新台幣有利（相對低波動風險），相反可將該百分比調整為負數，負風險百分比對持有比特幣有利。</p>
       </div>
@@ -40,14 +55,15 @@
       <ul class="list-group">
          <li class="list-group-item">比特幣地址：<input type="text"  style="width: 400px;" on-keyup="{{handleBtcAddrChange}}" value="{{btcAddr}}" />
            </li>
-           <li class="list-group-item">交易金額 : {{amountBtc}}BTC~={{amountTwd}}TWD
-          </li>
+           <li class="list-group-item">交易金額 : {{amountBtc}}BTC~={{amountTwd}}TWD</li>
+           <li class="list-group-item">Bitcoin URI :  <a href="bitcoin:{{btcAddr}}?amount={{amountBtc}}">bitcoin:{{btcAddr}}?amount={{amountBtc}}</a></li>
+           <li class="list-group-item">快速分享連結 :  <a href="#{{coinUrlPrefix}}/{{btcAddr}}/{{inrisk}}" target="_blank">點選</a></li>
       </ul>
       <p>
       <button type="button" class="btn btn-warning" on-click="{{handleGenQrCode}}">產生 QR CODE 二維條碼</button></p>
       <p>
-         <a href="{{qrurl}}" target="_blank"><img id="qrcodeImg" src="{{qrurl}}" class="hidden"/></a><br/>
-         <a href="bitcoin:{{btcAddr}}?amount={{amountBtc}}">bitcoin:{{btcAddr}}?amount={{amountBtc}}</a></p>
+         <a href="{{qrurl}}" target="_blank"><img id="qrcodeImg" src="{{qrurl}}" class="hidden"/></a>
+        </p>
       </div>
     </div>
   </template>

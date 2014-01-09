@@ -1,11 +1,27 @@
+/*
+ * Copyright 2013 Y12STUDIO
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import 'package:polymer/polymer.dart';
 import 'package:intl/intl.dart';
 import 'dart:html';
 import 'dart:convert';
 import 'dart:async';
+import 'package:route_hierarchical/client.dart';
 
 /**
- * A Polymer click counter element.
+ * A Polymer LiveInfo element.
  */
 @CustomTag('live-info')
 class LiveInfo extends PolymerElement {
@@ -27,6 +43,8 @@ class LiveInfo extends PolymerElement {
   @observable String amountBtc = "0.00000";
   @observable String btcAddr = "1xxxxxxxxxxxx";
   @observable String qrurl = "bitqr_y12.png";
+  @observable String coinUrlPrefix = "/btc/0.00";
+
   String url = "/json/twdbtc.json";
   String urlTest = "testdata/twdbtc.json";
   
@@ -45,6 +63,15 @@ class LiveInfo extends PolymerElement {
     qrimg = this.shadowRoot.querySelector('#qrcodeImg');
   }
   
+  void initRoute(){
+    var router = new Router(useFragment: true);
+    router.root
+      ..addRoute(name: 'btc', path: '/btc/:amount/:btcaddrId/:btcRisk', enter: showBtc)
+      ..addRoute(name: 'twd', path: '/twd/:amount/:btcaddrId/:btcRisk', enter: showTwd)
+        ..addRoute(name: 'home', defaultRoute: true, path: '/', enter: showHome);
+    router.listen();
+  }
+  
   bool get applyAuthorStyles => true;
   double vtwdPerBtc;
 
@@ -55,22 +82,16 @@ class LiveInfo extends PolymerElement {
   }
   
   void handleBtcChange(Event e, var detail, Node target) {
-    double vbtc = double.parse(inbtc);
-    double vrisk = double.parse(inrisk);
-    double vtwd = vbtc*vtwdPerBtc;
-    double rate = 1-(vrisk/100);
-    calcTwd = (vtwd*rate).toStringAsFixed(1);
-    calcTwdRaw = vtwd.toStringAsFixed(1);
-    calcBtc="0.0";
-    calcBtcRaw="0.0";
-    amountTwd = (vtwd*rate).toStringAsFixed(1);
-    amountBtc = vbtc.toString();
-    intwd = "0.0";
+     updateBtcValueChange();
   }
   
   String getQrUrl() => 'http://blackbananacoin.org/ext/bitqr.php?bid=${btcAddr}&amount=${amountBtc}&message=bkbc_gen';
   
   void handleTwdChange(Event e, var detail, Node target) {
+     updateTwdValueChange();
+  }
+  
+  void updateTwdValueChange(){
     double vtwd = double.parse(intwd);
     double vrisk = double.parse(inrisk);
     double vbtc = vtwd/vtwdPerBtc;
@@ -82,6 +103,25 @@ class LiveInfo extends PolymerElement {
     amountTwd = vtwd.toStringAsFixed(1);
     amountBtc = (vbtc*rate).toString();
     inbtc = "0.0";
+    coinUrlPrefix = "/twd/$amountTwd";
+  }
+  
+  void updateBtcValueChange(){
+    double vbtc = double.parse(inbtc);
+    double vrisk = double.parse(inrisk);
+    double vtwd = vbtc*vtwdPerBtc;
+    double rate = 1-(vrisk/100);
+    calcTwd = (vtwd*rate).toStringAsFixed(1);
+    calcTwdRaw = vtwd.toStringAsFixed(1);
+    calcBtc="0.0";
+    calcBtcRaw="0.0";
+    amountTwd = (vtwd*rate).toStringAsFixed(1);
+    amountBtc = vbtc.toString();
+    intwd = "0.0";
+    
+    coinUrlPrefix = "/btc/$amountBtc";
+    
+    
   }
   
   void handleRiskChange(Event e, var detail, Node target) {
@@ -117,6 +157,26 @@ class LiveInfo extends PolymerElement {
     twdPerBtc = vtwdPerBtc.toStringAsFixed(1);
     twdPerTx = (vtwdPerBtc*0.0001).toStringAsFixed(2);
     updateTime = formatter.format(date.toLocal());
+    initRoute();
+  }
+  
+  void showHome(RouteEvent e) {
+    // nothing to parse from path, since there are no groups
+    print("home");
+  }
+
+  void showBtc(RouteEvent e) {
+    btcAddr = e.parameters['btcaddrId'];
+    inrisk = e.parameters['btcRisk'];
+    inbtc = e.parameters['amount'];
+    updateBtcValueChange();
+  }
+  
+  void showTwd(RouteEvent e) {
+    btcAddr = e.parameters['btcaddrId'];
+    inrisk = e.parameters['btcRisk'];
+    intwd = e.parameters['amount'];
+    updateTwdValueChange();
   }
 }
 

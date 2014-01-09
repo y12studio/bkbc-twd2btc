@@ -3,6 +3,7 @@ description: A sample Polymer application
 dependencies:
   intl: any
   polymer: any
+  route_hierarchical: any
 transformers:
 - polymer:
     entry_points: web/bkbc_twd2btc.html
