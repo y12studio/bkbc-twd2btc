@@ -21,7 +21,7 @@
       </div>
     </div>
       <div class="panel panel-default">
-      <div class="panel-heading">計算機</div>
+      <div class="panel-heading">交易金額計算機</div>
       <div class="panel-body">
       <ul class="list-group">
           <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleRiskChange}}" value="{{inrisk}}" />%匯率波動及風險調整百分比</li>
@@ -31,11 +31,11 @@
            <li class="list-group-item"><input type="text" style="width: 120px;" on-keyup="{{handleTwdChange}}" value="{{intwd}}" />TWD~=<span
           class="label label-info big">{{calcBtc}}</span> BTC <span class="label label-default pull-right">{{calcBtcRaw}}</span></li>
       </ul>
-       <p>灰色代表沒有調整的數值，正風險百分比預設新台幣有利（相對低波動風險），相反可調整為負數改為對比特敝有利。</p>
+       <p>灰色代表沒有調整的數值，正風險百分比預設新台幣有利（相對低波動風險），相反可將該百分比調整為負數，負風險百分比對持有比特幣有利。</p>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="panel-heading">QR CODE 二維條碼</div>
+      <div class="panel-heading">交易 QR CODE 二維條碼產生器</div>
       <div class="panel-body">
       <ul class="list-group">
          <li class="list-group-item">比特幣地址：<input type="text"  style="width: 400px;" on-keyup="{{handleBtcAddrChange}}" value="{{btcAddr}}" />

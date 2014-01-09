@@ -25,7 +25,7 @@ class LiveInfo extends PolymerElement {
   @observable String calcBtcRaw = "0.00000";
   @observable String amountTwd = "000000.0";
   @observable String amountBtc = "0.00000";
-  @observable String btcAddr = "Bitcoin Address Here";
+  @observable String btcAddr = "1xxxxxxxxxxxx";
   @observable String qrurl = "bitqr_y12.png";
   String url = "/json/twdbtc.json";
   String urlTest = "testdata/twdbtc.json";
