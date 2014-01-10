@@ -33,6 +33,11 @@ class LiveInfo extends PolymerElement {
   @observable String usdPerBtc = "0.0";
   @observable String twdPerBtc = "0.0";
   @observable String twdPerTx = "0.0";
+  @observable String s24hrmean = "0";
+  @observable String s24hrstd = "0";
+  @observable String s24hrmax = "0";
+  @observable String s24hrmin = "0";
+  @observable String btcPerKtwd = "0.0";
   @observable String inbtc = "0.0";
   @observable String intwd = "0.0";
   @observable String inrisk = "0";
@@ -164,14 +169,25 @@ class LiveInfo extends PolymerElement {
     double vtwdPerUsd = data["usdtwd"];
     double vusdPerBtc = data["btcusd"];
     double vTxFeeTwd = data["txfeetwd"];
+    double v24hrmean = data["mean24hr"];
+    double v24hrmin = data["min24hr"];
+    double v24hrmax = data["max24hr"];
+    double v24hrstd = data["std24hr"];
     int timems = data["timems"];
     vBtcTwd = data["btctwd"];
     DateTime updateDate = new DateTime.fromMillisecondsSinceEpoch(timems, isUtc: true);
     twdPerUsd = vtwdPerUsd.toStringAsFixed(2);
     usdPerBtc = vusdPerBtc.toStringAsFixed(2);
-    twdPerBtc = vBtcTwd.toStringAsFixed(1);
+    twdPerBtc = vBtcTwd.toStringAsFixed(0);
+    btcPerKtwd = (1000.0/vBtcTwd).toStringAsFixed(6);
     twdPerTx = vTxFeeTwd.toStringAsFixed(2);
     updateTime = formatter.format(updateDate.toLocal());
+    
+    s24hrmean = v24hrmean.toStringAsFixed(0);
+    s24hrmax = v24hrmax.toStringAsFixed(0);
+    s24hrmin = v24hrmin.toStringAsFixed(0);
+    s24hrstd = v24hrstd.toStringAsFixed(1);
+    
     initRoute();
   }
   

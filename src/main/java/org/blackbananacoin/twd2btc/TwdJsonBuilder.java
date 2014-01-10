@@ -18,8 +18,19 @@ public class TwdJsonBuilder {
 		return gson.toJson(twdBit);
 	}
 
-	public TwdBit parse(String json) {
+	public String buildJsonFromOldTwdBit(TwdBit tb, double usdtwd, double btcusd) {
+		tb.update(usdtwd, btcusd);
+		return gson.toJson(tb);
+	}
+
+	public TwdBit toTwdBit(String json) {
 		return gson.fromJson(json, TwdBit.class);
 	}
+	
+	public String toJson(TwdBit tb) {
+		return gson.toJson(tb);
+	}
+	
+	
 
 }

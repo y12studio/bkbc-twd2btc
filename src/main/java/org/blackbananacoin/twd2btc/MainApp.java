@@ -31,17 +31,17 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		String dir = ".";
-		if(args!=null){
+		if (args != null) {
 			checkElementIndex(0, args.length);
 			dir = args[0];
 		}
 		final File dirFile = new File(dir);
-		if(!dirFile.exists()){
+		if (!dirFile.exists()) {
 			dirFile.mkdir();
 		}
 		System.out.println(dirFile.getAbsolutePath());
-		final File blockchainFile = new File(dirFile,"blockchain_twd.json");
-		final File twdbtcFile = new File(dirFile,"twdbtc.json");
+		final File blockchainFile = new File(dirFile, "blockchain_twd.json");
+		final File twdbtcFile = new File(dirFile, "twdbtc.json");
 		System.out.println(blockchainFile.getAbsolutePath());
 		System.out.println(twdbtcFile.getAbsolutePath());
 		final Charset charset = Charset.forName("UTF-8");
@@ -53,14 +53,41 @@ public class MainApp {
 
 			app.startRequest(new MyCallback() {
 				public void onResult(Map<GenType, String> jsonStrMap) {
-					
+
 					try {
-						Files.write(jsonStrMap.get(GenType.BLOCKCHAIN), blockchainFile, charset);
-						Files.write(jsonStrMap.get(GenType.TWDUSD), twdbtcFile, charset);
-						System.out.println("=====Blockchain======");
-						System.out.println(jsonStrMap.get(GenType.BLOCKCHAIN));					
-						System.out.println("=====TwdUsd======");
-						System.out.println(jsonStrMap.get(GenType.TWDUSD));
+						Files.write(jsonStrMap.get(GenType.BLOCKCHAIN),
+								blockchainFile, charset);
+						//System.out.println("=====Blockchain======");
+						//System.out.println(jsonStrMap.get(GenType.BLOCKCHAIN));
+
+						if (twdbtcFile.exists()) {
+							TwdJsonBuilder jb = new TwdJsonBuilder();
+							String twdBitStrNew = jsonStrMap
+									.get(GenType.TWDUSD);
+							TwdBit twdBitNew = jb.toTwdBit(twdBitStrNew);
+							try {
+								String twdBitStrOld = Files.readFirstLine(
+										twdbtcFile, charset);
+								TwdBit twdBitOld = jb.toTwdBit(twdBitStrOld);
+								String twdBitStrWithData = jb
+										.buildJsonFromOldTwdBit(twdBitOld,
+												twdBitNew.getUsdtwd(),
+												twdBitNew.getBtcusd());
+								Files.write(twdBitStrWithData, twdbtcFile,
+										charset);
+
+							} catch (Exception e) {
+								Files.write(jsonStrMap.get(GenType.TWDUSD),
+										twdbtcFile, charset);
+							}
+
+						} else {
+							Files.write(jsonStrMap.get(GenType.TWDUSD),
+									twdbtcFile, charset);
+						}
+
+						//System.out.println("=====TwdUsd======");
+						//System.out.println(jsonStrMap.get(GenType.TWDUSD));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
