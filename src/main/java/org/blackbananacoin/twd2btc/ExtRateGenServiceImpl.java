@@ -38,8 +38,6 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 public class ExtRateGenServiceImpl implements ExchangeRateService {
 
@@ -57,12 +55,13 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 	public static final JsonFactory JSON_FACTORY = new GsonFactory();
 	public static String EXURL_BLOCKCHAIN = "https://blockchain.info/ticker";
 
+	private final TwdJsonBuilder twdJsonBuilder = new TwdJsonBuilder();
+	
 	public static interface MyCallback {
 		void onResult(Map<GenType, String> jsonStrMap);
 	}
 
-	Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssz")
-			.create();
+
 
 	public ExtRateGenServiceImpl(String curTagName) {
 		this.YAHOO_CUR_TAG = curTagName;
@@ -135,15 +134,8 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 										.parseAs(GenericJson.class);
 								double usdPerBtc = processTwdAppend(twdPerUsd, json);
 								Map<GenType, String> rmap = Maps.newHashMap();
-								rmap.put(GenType.BLOCKCHAIN, json.toString());
-								
-								
-								TwdBit twdBit = new TwdBit();
-								twdBit.setTwdPerUsd(twdPerUsd);
-								twdBit.setUsdPerBtc(usdPerBtc);
-								twdBit.update();
-								//System.out.println(gson.toJson(twdBit));
-								rmap.put(GenType.TWDUSD, gson.toJson(twdBit));
+								rmap.put(GenType.BLOCKCHAIN, json.toString());																
+								rmap.put(GenType.TWDUSD, twdJsonBuilder.buildJson(twdPerUsd,usdPerBtc));
 								return rmap;
 							}
 

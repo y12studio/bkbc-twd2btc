@@ -1,10 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.blackbananacoin</groupId>
-  <artifactId>twd2btc</artifactId>
-  <version>0.0.1</version>
-  	<build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.blackbananacoin</groupId>
+	<artifactId>twd2btc</artifactId>
+	<version>0.0.1</version>
+	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.16</version>
+				<configuration>
+					<reuseForks>false</reuseForks>
+					<forkCount>1</forkCount>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -40,16 +50,22 @@
 			</plugin>
 		</plugins>
 	</build>
-  <dependencies>
-  	<dependency>
-  		<groupId>com.google.guava</groupId>
-  		<artifactId>guava</artifactId>
-  		<version>15.0</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>com.google.http-client</groupId>
-  		<artifactId>google-http-client-gson</artifactId>
-  		<version>1.17.0-rc</version>
-  	</dependency>
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>15.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.http-client</groupId>
+			<artifactId>google-http-client-gson</artifactId>
+			<version>1.17.0-rc</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

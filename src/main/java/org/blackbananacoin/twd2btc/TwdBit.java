@@ -19,59 +19,58 @@ import java.util.Date;
 
 public class TwdBit {
 
-	private double twdPerUsd = 30.0d;
-	private double usdPerBtc = 100.0d;
-	private double twdMinTxFee = 1.0d;
+	private double usdtwd = 1.0d;
+	private double btcusd = 1.0d;
+	private double txfeetwd = 1.0d;
+	private double btctwd = 1.0d;
 
-	private Date updateTime;
-	private long updateTimeMs;
+	private Date time;
+	private long timems;
 
-	public double getTwdPerUsd() {
-		return twdPerUsd;
-	}
-
-	public void setTwdPerUsd(double twdPerUsd) {
-		this.twdPerUsd = twdPerUsd;
-	}
-
-	public Date getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public double getUsdPerBtc() {
-		return usdPerBtc;
-	}
-
-	public void setUsdPerBtc(double usdPerBtc) {
-		this.usdPerBtc = usdPerBtc;
+	public TwdBit(double usdtwd, double btcusd) {
+		this.setUsdtwd(usdtwd);
+		this.setBtcusd(btcusd);
+		update();
 	}
 
 	public void update() {
-		this.setUpdateTime(new Date());
-		this.setUpdateTimeMs(this.getUpdateTime().getTime());
+		time = new Date();
+		timems = this.time.getTime();
 		// min tx fee 0.0001 (BTC)
-		double twdPerBtc = usdPerBtc * twdPerUsd;
-		setTwdMinTxFee(twdPerBtc * 0.0001d);
+		setBtctwd(getBtcusd() * getUsdtwd());
+		setTxfeetwd(getBtctwd() * 0.0001d);
 	}
 
-	public double getTwdMinTxFee() {
-		return twdMinTxFee;
+	public double getUsdtwd() {
+		return usdtwd;
 	}
 
-	public void setTwdMinTxFee(double twdMinTxFee) {
-		this.twdMinTxFee = twdMinTxFee;
+	public void setUsdtwd(double usdtwd) {
+		this.usdtwd = usdtwd;
 	}
 
-	public long getUpdateTimeMs() {
-		return updateTimeMs;
+	public double getBtcusd() {
+		return btcusd;
 	}
 
-	public void setUpdateTimeMs(long updateTimeMs) {
-		this.updateTimeMs = updateTimeMs;
+	public void setBtcusd(double btcusd) {
+		this.btcusd = btcusd;
+	}
+
+	public double getTxfeetwd() {
+		return txfeetwd;
+	}
+
+	public void setTxfeetwd(double txfeetwd) {
+		this.txfeetwd = txfeetwd;
+	}
+
+	public double getBtctwd() {
+		return btctwd;
+	}
+
+	public void setBtctwd(double btctwd) {
+		this.btctwd = btctwd;
 	}
 
 }

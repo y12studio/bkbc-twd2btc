@@ -19,6 +19,7 @@ import 'dart:html';
 import 'dart:convert';
 import 'dart:async';
 import 'package:route_hierarchical/client.dart';
+import 'package:crypto/crypto.dart';
 
 /**
  * A Polymer LiveInfo element.
@@ -61,6 +62,20 @@ class LiveInfo extends PolymerElement {
     }
     loadData();
     qrimg = this.shadowRoot.querySelector('#qrcodeImg');
+    //print(testSha256('message'));
+  }
+  
+  String testSha256(String target){
+    var sha256 = new SHA256();
+    sha256.add(target.codeUnits);
+    List<int> digest = sha256.close();
+    for(int v in digest){
+      print(v);
+    }
+    var hexString = CryptoUtils.bytesToHex(digest);
+    // 'message'
+    //print(hexString =='ab530a13e45914982b79f9b7e3fba994cfd1f3fb22f71cea1afbf02b460c6d1d'); //true
+    return hexString;
   }
   
   void initRoute(){
@@ -73,10 +88,9 @@ class LiveInfo extends PolymerElement {
   }
   
   bool get applyAuthorStyles => true;
-  double vtwdPerBtc;
+  double vBtcTwd;
 
   void loadData() {
-    
     // call the web server asynchronously
     Future request = HttpRequest.getString(url).then(onDataLoaded);
   }
@@ -94,7 +108,7 @@ class LiveInfo extends PolymerElement {
   void updateTwdValueChange(){
     double vtwd = double.parse(intwd);
     double vrisk = double.parse(inrisk);
-    double vbtc = vtwd/vtwdPerBtc;
+    double vbtc = vtwd/vBtcTwd;
     double rate = 1+(vrisk/100);
     calcBtc = (vbtc*rate).toStringAsFixed(8);
     calcBtcRaw = vbtc.toStringAsFixed(8);
@@ -109,7 +123,7 @@ class LiveInfo extends PolymerElement {
   void updateBtcValueChange(){
     double vbtc = double.parse(inbtc);
     double vrisk = double.parse(inrisk);
-    double vtwd = vbtc*vtwdPerBtc;
+    double vtwd = vbtc*vBtcTwd;
     double rate = 1-(vrisk/100);
     calcTwd = (vtwd*rate).toStringAsFixed(1);
     calcTwdRaw = vtwd.toStringAsFixed(1);
@@ -147,22 +161,23 @@ class LiveInfo extends PolymerElement {
   
   void onDataLoaded(String jsonString) {
     Map data = JSON.decode(jsonString); // parse response text
-    double vtwdPerUsd = data["twdPerUsd"];
-    double vusdPerBtc = data["usdPerBtc"];
-    int timems = data["updateTimeMs"];
-    DateTime date = new DateTime.fromMillisecondsSinceEpoch(timems, isUtc: true);
-    vtwdPerBtc = vtwdPerUsd*vusdPerBtc;
+    double vtwdPerUsd = data["usdtwd"];
+    double vusdPerBtc = data["btcusd"];
+    double vTxFeeTwd = data["txfeetwd"];
+    int timems = data["timems"];
+    vBtcTwd = data["btctwd"];
+    DateTime updateDate = new DateTime.fromMillisecondsSinceEpoch(timems, isUtc: true);
     twdPerUsd = vtwdPerUsd.toStringAsFixed(2);
     usdPerBtc = vusdPerBtc.toStringAsFixed(2);
-    twdPerBtc = vtwdPerBtc.toStringAsFixed(1);
-    twdPerTx = (vtwdPerBtc*0.0001).toStringAsFixed(2);
-    updateTime = formatter.format(date.toLocal());
+    twdPerBtc = vBtcTwd.toStringAsFixed(1);
+    twdPerTx = vTxFeeTwd.toStringAsFixed(2);
+    updateTime = formatter.format(updateDate.toLocal());
     initRoute();
   }
   
   void showHome(RouteEvent e) {
     // nothing to parse from path, since there are no groups
-    print("home");
+    // print("home");
   }
 
   void showBtc(RouteEvent e) {
