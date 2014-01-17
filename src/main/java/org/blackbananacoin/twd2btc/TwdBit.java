@@ -36,6 +36,8 @@ public class TwdBit {
 	private long timems;
 	
 	private List<Integer> data24hr = Lists.newArrayList();
+	private List<Integer> dataUsdTwd24hr = Lists.newArrayList();
+	private List<Integer> dataBtcUsd24hr = Lists.newArrayList();
 
 	private double mean24hr;
 

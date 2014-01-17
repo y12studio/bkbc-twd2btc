@@ -67,7 +67,6 @@ class LiveInfo extends PolymerElement {
     }
     loadData();
     qrimg = this.shadowRoot.querySelector('#qrcodeImg');
-    //print(testSha256('message'));
   }
   
   String testSha256(String target){
@@ -95,22 +94,22 @@ class LiveInfo extends PolymerElement {
   bool get applyAuthorStyles => true;
   double vBtcTwd;
 
-  void loadData() {
+  loadData() {
     // call the web server asynchronously
     Future request = HttpRequest.getString(url).then(onDataLoaded);
   }
   
-  void handleBtcChange(Event e, var detail, Node target) {
+  handleBtcChange(Event e, var detail, Node target) {
      updateBtcValueChange();
   }
   
   String getQrUrl() => 'http://blackbananacoin.org/ext/bitqr.php?bid=${btcAddr}&amount=${amountBtc}&message=bkbc_gen';
   
-  void handleTwdChange(Event e, var detail, Node target) {
+  handleTwdChange(Event e, var detail, Node target) {
      updateTwdValueChange();
   }
   
-  void updateTwdValueChange(){
+  updateTwdValueChange(){
     double vtwd = double.parse(intwd);
     double vrisk = double.parse(inrisk);
     double vbtc = vtwd/vBtcTwd;
@@ -125,7 +124,7 @@ class LiveInfo extends PolymerElement {
     coinUrlPrefix = "/twd/$amountTwd";
   }
   
-  void updateBtcValueChange(){
+  updateBtcValueChange(){
     double vbtc = double.parse(inbtc);
     double vrisk = double.parse(inrisk);
     double vtwd = vbtc*vBtcTwd;
@@ -137,13 +136,10 @@ class LiveInfo extends PolymerElement {
     amountTwd = (vtwd*rate).toStringAsFixed(1);
     amountBtc = vbtc.toString();
     intwd = "0.0";
-    
     coinUrlPrefix = "/btc/$amountBtc";
-    
-    
   }
   
-  void handleRiskChange(Event e, var detail, Node target) {
+  handleRiskChange(Event e, var detail, Node target) {
     inbtc = "0.0";
     intwd = "0.0";
     calcBtc="0.0";
@@ -152,10 +148,10 @@ class LiveInfo extends PolymerElement {
     calcTwdRaw="0.0";
   }
   
-  void handleGenQrCode(Event e, var detail, Node target) {
+  handleGenQrCode(Event e, var detail, Node target) {
     qrimg.className='hidden';
     qrurl = getQrUrl();
-    print(qrurl);
+    //print(qrurl);
     var futures = [qrimg.onLoad.first];
     Future.wait(futures).then((_) => qrimg.className='show');
   }
@@ -165,7 +161,8 @@ class LiveInfo extends PolymerElement {
   }
   
   void onDataLoaded(String jsonString) {
-    Map data = JSON.decode(jsonString); // parse response text
+    // parse json to map
+    Map data = JSON.decode(jsonString); 
     double vtwdPerUsd = data["usdtwd"];
     double vusdPerBtc = data["btcusd"];
     double vTxFeeTwd = data["txfeetwd"];
