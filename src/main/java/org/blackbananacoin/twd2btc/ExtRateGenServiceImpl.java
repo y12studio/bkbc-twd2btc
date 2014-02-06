@@ -51,7 +51,7 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 	private final String YAHOO_CUR_TAG;
 	public final static String CODE_TWD = "TWD";
 
-	public static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+	
 	public static final JsonFactory JSON_FACTORY = new GsonFactory();
 	public static String EXURL_BLOCKCHAIN = "https://blockchain.info/ticker";
 
@@ -91,8 +91,10 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 	}
 
 	public void startRequest(final MyCallback mcb) throws Exception {
+		
+		HttpTransport transport = new NetHttpTransport.Builder().doNotValidateCertificate().build();
 
-		HttpRequestFactory requestFactory = HTTP_TRANSPORT
+		HttpRequestFactory requestFactory = transport
 				.createRequestFactory(new HttpRequestInitializer() {
 					public void initialize(HttpRequest request) {
 						request.setParser(new JsonObjectParser(JSON_FACTORY));
@@ -100,6 +102,7 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 				});
 		final GenericUrl urlBlockchain = new GenericUrl(EXURL_BLOCKCHAIN);
 		final GenericUrl urlYahooTwd = new GenericUrl(getExtRateYahooUrl());
+		
 		final HttpRequest requestBlockChain = requestFactory
 				.buildGetRequest(urlBlockchain);
 
@@ -130,6 +133,7 @@ public class ExtRateGenServiceImpl implements ExchangeRateService {
 				final ListenableFuture<Map<GenType, String>> futureReqBlockChain = pool
 						.submit(new Callable<Map<GenType, String>>() {
 							public Map<GenType, String> call() throws Exception {
+								
 								GenericJson json = requestBlockChain.execute()
 										.parseAs(GenericJson.class);
 								double usdPerBtc = processTwdAppend(twdPerUsd, json);
